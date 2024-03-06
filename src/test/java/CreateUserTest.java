@@ -1,7 +1,7 @@
 import static util.Constants.*;
 
 import dto.InfoResponse;
-import dto.UserCreatedResponse;
+import dto.UserCreatedLoginResponse;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
 import org.apache.http.HttpStatus;
@@ -14,10 +14,10 @@ public class CreateUserTest extends BaseTest {
   @DisplayName("Check created of /auth/register")
   @Description("Пользователя можно создать")
   public void createUserThenSuccess() {
-    UserCreatedResponse response = steps.createUserStep(user)
+    UserCreatedLoginResponse response = steps.createUserStep(user)
         .then()
         .statusCode(HttpStatus.SC_OK)
-        .extract().as(UserCreatedResponse.class);
+        .extract().as(UserCreatedLoginResponse.class);
 
     Assert.assertTrue(response.isSuccess());
     accessToken = response.getAccessToken();
@@ -27,7 +27,7 @@ public class CreateUserTest extends BaseTest {
   @DisplayName("Check create exists of /auth/register")
   @Description("Нельзя создать существующего пользователя")
   public void createExistsUserThenFail() {
-    accessToken = steps.createUserStep(user).as(UserCreatedResponse.class).getAccessToken();
+    accessToken = steps.createUserStep(user).as(UserCreatedLoginResponse.class).getAccessToken();
 
     InfoResponse response = steps.createUserStep(user)
         .then()

@@ -32,4 +32,9 @@ public class Steps {
   public void deleteUserStep(String accessToken) {
     doDeleteRequest(deleteUserUrl, accessToken);
   }
+
+  @Step("Логин пользователя")
+  public Response loginUserStep(Object body) {
+    return doPostRequest(loginUserUrl, body);
+  }
 }

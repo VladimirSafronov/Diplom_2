@@ -3,7 +3,7 @@ package dto;
 /**
  * Класс dto ответа успешного создания пользователя
  */
-public class UserCreatedResponse {
+public class UserCreatedLoginResponse {
 
   private boolean success;
   private BaseUser user;

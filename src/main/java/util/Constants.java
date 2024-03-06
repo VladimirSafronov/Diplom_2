@@ -25,6 +25,11 @@ public class Constants {
    */
   public static final String REQUIRED_FIELDS = "Email, password and name are required fields";
 
+  /**
+   * Ожидаемое соообщение при попытке логина пользователя без обязательного поля или с ошибкой в нем
+   */
+  public static final String INCORRECT_LOGIN_OR_PASSWORD = "email or password are incorrect";
+
 
   /**
    * Данные для тестового пользователя
