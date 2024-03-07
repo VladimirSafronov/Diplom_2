@@ -43,4 +43,23 @@ public class Specification {
         .delete(path)
         .thenReturn();
   }
+
+  public static Response doPatchRequest(String path, String accessToken, Object body) {
+    return given()
+        .spec(requestSpec())
+        .header("Authorization", accessToken)
+        .body(body)
+        .when()
+        .patch(path)
+        .thenReturn();
+  }
+
+  public static Response doPatchRequest(String path, Object body) {
+    return given()
+        .spec(requestSpec())
+        .body(body)
+        .when()
+        .patch(path)
+        .thenReturn();
+  }
 }

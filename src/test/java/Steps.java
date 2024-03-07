@@ -19,9 +19,9 @@ public class Steps {
   final String loginUserUrl = "/auth/login";
 
   /**
-   * Адрес ручки удаления пользователя
+   * Адрес ручки удаления и изменения данных пользователя
    */
-  final String deleteUserUrl = "/auth/user";
+  final String deleteAndUpdateUserDataUrl = "/auth/user";
 
   @Step("Создание пользователя")
   public Response createUserStep(Object body) {
@@ -30,11 +30,21 @@ public class Steps {
 
   @Step("Удаление пользователя")
   public void deleteUserStep(String accessToken) {
-    doDeleteRequest(deleteUserUrl, accessToken);
+    doDeleteRequest(deleteAndUpdateUserDataUrl, accessToken);
   }
 
   @Step("Логин пользователя")
   public Response loginUserStep(Object body) {
     return doPostRequest(loginUserUrl, body);
+  }
+
+  @Step("Обновление данных пользователя")
+  public Response updateUserData(String accessToken, Object body) {
+    return doPatchRequest(deleteAndUpdateUserDataUrl, accessToken, body);
+  }
+
+  @Step("Обновление данных пользователя без Auth")
+  public Response updateUserData(Object body) {
+    return doPatchRequest(deleteAndUpdateUserDataUrl, body);
   }
 }

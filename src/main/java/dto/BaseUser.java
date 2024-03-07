@@ -9,7 +9,7 @@ public class BaseUser {
   }
 
   public BaseUser(String email, String name) {
-    this.email = email;
+    this.email = email.toLowerCase();
     this.name = name;
   }
 

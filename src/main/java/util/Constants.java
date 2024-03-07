@@ -11,11 +11,6 @@ public class Constants {
   public static final String URL = "https://stellarburgers.nomoreparties.site/api";
 
   /**
-   * Заголовок при ответе с кодом 200
-   */
-  public static final String OK_STATUS_LINE = "HTTP/1.1 200 OK";
-
-  /**
    * Ожидаемое соообщение при попытке создания существующего пользователя
    */
   public static final String USER_ALREADY_EXISTS = "User already exists";
@@ -29,6 +24,16 @@ public class Constants {
    * Ожидаемое соообщение при попытке логина пользователя без обязательного поля или с ошибкой в нем
    */
   public static final String INCORRECT_LOGIN_OR_PASSWORD = "email or password are incorrect";
+
+  /**
+   * Ожидаемое соообщение при попытке изменения данных без авторизации
+   */
+  public static final String SHOULD_AUTHORIZED = "You should be authorised";
+
+  /**
+   * Ожидаемое соообщение при попытке изменения на существующий email
+   */
+  public static final String EMAIL_ALREADY_EXISTS = "User with such email already exists";
 
 
   /**

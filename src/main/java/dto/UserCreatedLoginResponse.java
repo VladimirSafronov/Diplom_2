@@ -1,30 +1,12 @@
 package dto;
 
 /**
- * Класс dto ответа успешного создания пользователя
+ * Класс dto ответа успешного создания или авторизации пользователя
  */
-public class UserCreatedLoginResponse {
+public class UserCreatedLoginResponse extends BaseUserResponse {
 
-  private boolean success;
-  private BaseUser user;
   private String accessToken;
   private String refreshToken;
-
-  public boolean isSuccess() {
-    return success;
-  }
-
-  public void setSuccess(boolean success) {
-    this.success = success;
-  }
-
-  public BaseUser getUser() {
-    return user;
-  }
-
-  public void setUser(BaseUser user) {
-    this.user = user;
-  }
 
   public String getAccessToken() {
     return accessToken;
