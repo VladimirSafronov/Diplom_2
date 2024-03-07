@@ -23,6 +23,16 @@ public class Steps {
    */
   final String deleteAndUpdateUserDataUrl = "/auth/user";
 
+  /**
+   * Адрес ручки получения всех ингредиентов
+   */
+  final String getIngredientsUrl = "/ingredients";
+
+  /**
+   * Адрес ручки создания заказа
+   */
+  final String createOrderUrl = "/orders";
+
   @Step("Создание пользователя")
   public Response createUserStep(Object body) {
     return doPostRequest(createUserUrl, body);
@@ -46,5 +56,20 @@ public class Steps {
   @Step("Обновление данных пользователя без Auth")
   public Response updateUserData(Object body) {
     return doPatchRequest(deleteAndUpdateUserDataUrl, body);
+  }
+
+  @Step("Получить данные об ингредиентах")
+  public Response getIngredientsStep(String accessToken, Object body) {
+    return doGetRequest(getIngredientsUrl, accessToken, body);
+  }
+
+  @Step("Создать заказ авторизованным пользователем")
+  public Response createOrderStep(String accessToken, Object body) {
+    return doPostRequest(createOrderUrl, accessToken, body);
+  }
+
+  @Step("Создать заказ неавторизованным пользователем")
+  public Response createOrderStep(Object body) {
+    return doPostRequest(createOrderUrl, body);
   }
 }

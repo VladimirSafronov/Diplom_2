@@ -1,5 +1,8 @@
 package dto;
 
+/**
+ * Базовый класс dto пользователя
+ */
 public class BaseUser {
 
   protected String email;

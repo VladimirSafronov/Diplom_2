@@ -35,6 +35,15 @@ public class Constants {
    */
   public static final String EMAIL_ALREADY_EXISTS = "User with such email already exists";
 
+  /**
+   * Ожидаемое соообщение при попытке создания заказа не указав ингридиентов
+   */
+  public static final String NO_INGREDIENT = "Ingredient ids must be provided";
+
+  /**
+   * Содержание в теле ответа при статус коде 500
+   */
+  public static final String INTERNAL_SERVER_ERROR = "Internal Server Error";
 
   /**
    * Данные для тестового пользователя

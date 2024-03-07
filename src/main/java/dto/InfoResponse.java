@@ -1,5 +1,8 @@
 package dto;
 
+/**
+ * Класс dto ответа с информацей
+ */
 public class InfoResponse {
 
   private boolean success;
