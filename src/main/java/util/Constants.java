@@ -26,7 +26,7 @@ public class Constants {
   public static final String INCORRECT_LOGIN_OR_PASSWORD = "email or password are incorrect";
 
   /**
-   * Ожидаемое соообщение при попытке изменения данных без авторизации
+   * Ожидаемое соообщение при попытке манипуляций без авторизации
    */
   public static final String SHOULD_AUTHORIZED = "You should be authorised";
 

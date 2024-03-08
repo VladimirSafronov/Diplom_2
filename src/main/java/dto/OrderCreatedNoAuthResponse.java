@@ -3,7 +3,7 @@ package dto;
 /**
  * Класс dto ответа успешного создания заказа незарегистрированного пользователя
  */
-public class OrderCreatedNoAuthResponse extends BaseOrderCreated {
+public class OrderCreatedNoAuthResponse extends BaseOrderCreatedResponse {
 
   private OrderNumber order;
 

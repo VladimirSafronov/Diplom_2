@@ -3,7 +3,7 @@ package dto;
 /**
  * Класс dto созданного заказа авторизованным пользователем
  */
-public class OrderCreatedAuthResponse extends BaseOrderCreated {
+public class OrderCreatedAuthResponse extends BaseOrderCreatedResponse {
 
   private CreatedOrder order;
 

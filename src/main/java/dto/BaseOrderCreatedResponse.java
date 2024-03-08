@@ -1,6 +1,6 @@
 package dto;
 
-public class BaseOrderCreated {
+public class BaseOrderCreatedResponse {
 
   protected String name;
   protected boolean success;

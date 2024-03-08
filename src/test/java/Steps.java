@@ -31,7 +31,7 @@ public class Steps {
   /**
    * Адрес ручки создания заказа
    */
-  final String createOrderUrl = "/orders";
+  final String createOrGetOrderUrl = "/orders";
 
   @Step("Создание пользователя")
   public Response createUserStep(Object body) {
@@ -65,11 +65,21 @@ public class Steps {
 
   @Step("Создать заказ авторизованным пользователем")
   public Response createOrderStep(String accessToken, Object body) {
-    return doPostRequest(createOrderUrl, accessToken, body);
+    return doPostRequest(createOrGetOrderUrl, accessToken, body);
   }
 
   @Step("Создать заказ неавторизованным пользователем")
   public Response createOrderStep(Object body) {
-    return doPostRequest(createOrderUrl, body);
+    return doPostRequest(createOrGetOrderUrl, body);
+  }
+
+  @Step("Получить все заказы авторизованного пользователя")
+  public Response getUserOrders(String accessToken) {
+    return doGetRequest(createOrGetOrderUrl, accessToken);
+  }
+
+  @Step("Получить все заказы неавторизованного пользователя")
+  public Response getUserOrders() {
+    return doGetRequest(createOrGetOrderUrl);
   }
 }

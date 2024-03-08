@@ -91,4 +91,21 @@ public class Specification {
         .get(path)
         .thenReturn();
   }
+
+  public static Response doGetRequest(String path, String accessToken) {
+    return given()
+        .spec(requestSpec())
+        .header("Authorization", accessToken)
+        .when()
+        .get(path)
+        .thenReturn();
+  }
+
+  public static Response doGetRequest(String path) {
+    return given()
+        .spec(requestSpec())
+        .when()
+        .get(path)
+        .thenReturn();
+  }
 }
