@@ -1,9 +1,13 @@
 package util;
 
+import com.github.javafaker.Faker;
+
 /**
  * Класс с константами
  */
 public class Constants {
+
+  static Faker faker = new Faker();
 
   /**
    * Базовый url приложения
@@ -48,7 +52,7 @@ public class Constants {
   /**
    * Данные для тестового пользователя
    */
-  public static final String TEST_USER_EMAIL = "testUser9898@yandex.ru";
-  public static final String TEST_USER_PASSWORD = "pass9898";
-  public static final String TEST_USER_NAME = "testUser9898";
+  public static final String TEST_USER_EMAIL = faker.internet().emailAddress();
+  public static final String TEST_USER_PASSWORD = faker.internet().password(6, 10);
+  public static final String TEST_USER_NAME = faker.name().firstName();
 }

@@ -18,9 +18,15 @@
     <rest-assured.version>5.4.0</rest-assured.version>
     <jackson-databind.version>2.16.1</jackson-databind.version>
     <allure-junit4.version>2.25.0</allure-junit4.version>
+    <javafaker.version>1.0.2</javafaker.version>
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>com.github.javafaker</groupId>
+      <artifactId>javafaker</artifactId>
+      <version>${javafaker.version}</version>
+    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
